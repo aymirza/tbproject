@@ -1,14 +1,15 @@
-package com.example.tbproject.service;
+package com.example.tbproject.service.impl;
 
 import com.example.tbproject.model.Student;
 import com.example.tbproject.repository.StudentRepository;
+import com.example.tbproject.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
-public class StudentServiceImpl implements StudentsService{
+public class StudentServiceImpl implements StudentsService {
     @Autowired
     private StudentRepository studentRepository;
 

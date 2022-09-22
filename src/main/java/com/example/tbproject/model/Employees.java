@@ -19,18 +19,21 @@ import javax.persistence.*;
 @Table(name = "employees")
 public class Employees {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer empid;
 
     private String lastname;
     private String firstname;
     private Integer phone;
+    @Lob
+    @Column(name = "photo", length = 1000)
     private Byte[] photo;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_uchastka")
     @JsonManagedReference
     private Uchastka uchastka;
+
 
 
 

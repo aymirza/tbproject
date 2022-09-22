@@ -12,14 +12,12 @@ import javax.persistence.*;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "student")
-public class Student {
+@Table(name = "narushenie_list")
+public class NarushenieList {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer narushenie_list_id;
+
     private String name;
-    private String email;
-    private Integer rollno;
-    private String uchastka;
 
 }

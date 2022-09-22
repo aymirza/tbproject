@@ -1,6 +1,6 @@
 package com.example.tbproject.controller;
 
-import com.example.tbproject.service.ImageUploadServiceImpl;
+import com.example.tbproject.service.impl.ImageUploadServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;

@@ -7,11 +7,15 @@ import java.util.List;
 
 @Component
 public interface EmployeesService {
-    public Employees createEmpl(Employees employees);
-    public Employees updateEmpl(Employees employees);
-    public Employees getEmployes(Integer empid);
-    public void deleteEmp(Integer empid);
-    public List<Employees> getAllEmpl();
+    Employees createEmpl(Employees employees);
+
+    Employees updateEmpl(Employees employees);
+
+    Employees getEmployes(Integer empid);
+
+    void deleteEmp(Integer empid);
+
+    List<Employees> getAllEmpl();
 
 
 }

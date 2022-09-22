@@ -17,7 +17,6 @@ public class ImageUpload {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String filename;
-    private String type;
     @Lob
     @Column(name = "image", length = 1000)
     private byte[] image;

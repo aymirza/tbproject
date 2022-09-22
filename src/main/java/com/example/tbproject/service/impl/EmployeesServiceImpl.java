@@ -1,8 +1,9 @@
-package com.example.tbproject.service;
+package com.example.tbproject.service.impl;
 
 import com.example.tbproject.model.Employees;
 import com.example.tbproject.model.Uchastka;
 import com.example.tbproject.repository.EmployeesRepository;
+import com.example.tbproject.service.EmployeesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Service;
@@ -12,7 +13,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class EmployeesServiceImpl implements EmployeesService{
+public class EmployeesServiceImpl implements EmployeesService {
 
     @Autowired
     private EmployeesRepository employeesRepository;

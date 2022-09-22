@@ -1,4 +1,4 @@
-package com.example.tbproject.service;
+package com.example.tbproject.service.impl;
 
 import com.example.tbproject.model.ImageUpload;
 import com.example.tbproject.repository.ImageUploadRepository;
@@ -21,7 +21,7 @@ public class ImageUploadServiceImpl {
     public String saveImage(MultipartFile file) throws IOException {
         ImageUpload imageUpload = imageUploadRepository.save(ImageUpload.builder()
                 .filename(file.getOriginalFilename())
-                .type(file.getContentType())
+
                 .image(ImageUtils.compressImage(file.getBytes())).build());
         if (imageUpload != null){
             return "file uploaded successfully: "+file.getOriginalFilename();

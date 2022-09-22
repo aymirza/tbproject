@@ -5,8 +5,6 @@ import com.example.tbproject.model.Student;
 import com.example.tbproject.service.StudentsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import javax.annotation.PostConstruct;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
