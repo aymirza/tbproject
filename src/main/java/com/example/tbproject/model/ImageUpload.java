@@ -21,6 +21,7 @@ public class ImageUpload {
     @Column(name = "image", length = 1000)
     private byte[] image;
 
+
 }
 
 

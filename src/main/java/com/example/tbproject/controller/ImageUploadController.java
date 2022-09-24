@@ -1,16 +1,21 @@
 package com.example.tbproject.controller;
 
+import com.example.tbproject.model.ImageUpload;
+import com.example.tbproject.model.ImageUpload2;
 import com.example.tbproject.service.impl.ImageUploadServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import java.io.IOException;
+import java.util.List;
 
 
 //@CrossOrigin(origins = "http://localhost:4040")
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/api/image")
 public class ImageUploadController {
@@ -19,8 +24,9 @@ public class ImageUploadController {
     private ImageUploadServiceImpl imageUploadService;
 
     @PostMapping
-    public ResponseEntity<?> uploadImage(@RequestParam("image") MultipartFile file) throws IOException{
-        String uploadImage = imageUploadService.saveImage(file);
+    public ResponseEntity<?> uploadImage(@RequestParam("filename") String filename,
+                                         @RequestParam("image") MultipartFile file) throws IOException{
+        String uploadImage = imageUploadService.saveImage(filename,file);
         return ResponseEntity.status(HttpStatus.OK)
                 .body(uploadImage);
     }
@@ -31,5 +37,9 @@ public class ImageUploadController {
                 .contentType(MediaType.valueOf("image/png"))
                 .body(imageData);
     }
+    @GetMapping("")
+    public List<ImageUpload> getAllImage(){
+        return null;
 
+    }
 }

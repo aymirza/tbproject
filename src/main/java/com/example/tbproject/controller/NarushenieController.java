@@ -40,8 +40,14 @@ public class NarushenieController {
     }
 
     @PostMapping("/create-empl-naruhsenie")
-    public ResponseEntity<EmployeeNarushenieModel> createEmplNarushenieModel(  EmployeeNarushenieModel employeeNarushenieModel) throws IOException {
-        return new ResponseEntity<>(emplNarushenieModelService.createEmplNarushenieModel(employeeNarushenieModel),HttpStatus.CREATED);
+    public ResponseEntity<?> createEmplNarushenieModel(
+            @RequestParam("lastname") String lastname, @RequestParam("firstname") String firstname,
+            @RequestParam("uchastka") String uchastka, @RequestParam("tsex_uchastka") String tsex_uchastka,
+            @RequestParam("pravila") String pravila, @RequestParam("narushenie") String narushenie,
+            @RequestParam("image") MultipartFile file) throws IOException {
+        String emplNarushenie = emplNarushenieModelService.createEmplNarushenieModel(
+                lastname,firstname,uchastka,tsex_uchastka,pravila,narushenie,file);
+        return ResponseEntity.status(HttpStatus.CREATED).body(emplNarushenie);
     }
 
     @DeleteMapping("delete-empl-narushenie/{empl_narushenie_model_id}")

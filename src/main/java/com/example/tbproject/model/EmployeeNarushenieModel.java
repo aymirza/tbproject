@@ -22,12 +22,12 @@ public class EmployeeNarushenieModel {
     private String tsex_uchastka;
     private String pravila;
     private String narushenie;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_uchastka")
-    @JsonManagedReference
-    private ImageUpload image_id;
-
-
+    //    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_uchastka")
+//    @JsonManagedReference
+    @Lob
+    @Column(name = "image", length = 1000)
+    private byte[] image;
 
 
 }
