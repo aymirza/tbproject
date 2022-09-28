@@ -17,4 +17,9 @@ public class UchastkaServiceImpl implements UchastkaService {
     public List<Uchastka> getAllUchastka() {
         return uchastkaRepository.findAll();
     }
+
+    @Override
+    public Uchastka saveUchastka(Uchastka uchastka) {
+        return uchastkaRepository.save(uchastka);
+    }
 }

@@ -8,5 +8,6 @@ import java.util.List;
 @Component
 public interface UchastkaService {
     List<Uchastka> getAllUchastka();
+    Uchastka saveUchastka(Uchastka uchastka);
 
 }

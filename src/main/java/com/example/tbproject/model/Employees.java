@@ -25,14 +25,14 @@ public class Employees {
     private String lastname;
     private String firstname;
     private Integer phone;
-    @Lob
-    @Column(name = "photo", length = 1000)
-    private Byte[] photo;
-
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "id_uchastka")
-    @JsonManagedReference
-    private Uchastka uchastka;
+//    @Lob
+//    @Column(name = "photo", length = 1000)
+//    private Byte[] photo;
+//
+//    @OneToOne(cascade = CascadeType.ALL)
+//    @JoinColumn(name = "id_uchastka")
+//    @JsonManagedReference
+//    private Uchastka uchastka;
 
 
 

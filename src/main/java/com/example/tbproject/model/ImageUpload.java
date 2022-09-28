@@ -20,8 +20,15 @@ public class ImageUpload {
     @Lob
     @Column(name = "image", length = 1000)
     private byte[] image;
+    @OneToOne
+    @JoinColumn(name = "uchastka_Id")
+    private Uchastka uchastka;
 
 
+    public ImageUpload(ImageUchastka imageUchastka) {
+        this.filename = imageUchastka.getFilename();
+        this.image = imageUchastka.getImage();
+    }
 }
 
 
