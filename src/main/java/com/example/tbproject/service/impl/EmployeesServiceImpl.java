@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -24,15 +25,16 @@ public class EmployeesServiceImpl implements EmployeesService {
     private PhotoNarushenieRepository photoNarushenieRepository;
 
     @Override
-    public Employees createEmpl(String name, MultipartFile file) throws IOException {
+    public Employees createEmpl(String name,String uchastka, MultipartFile file) throws IOException {
         PhotoNarushenie photoNarushenie = new PhotoNarushenie();
         byte[] imgData = ImageUtils.compressImage(file.getBytes());
         photoNarushenie.setPhoto(imgData);
-        photoNarushenie.setCdate(String.valueOf(LocalDate.now()));
+        photoNarushenie.setCdate(String.valueOf(LocalDateTime.now()));
         photoNarushenie = photoNarushenieRepository.save(photoNarushenie);
 
         Employees employees = new Employees();
         employees.setName(name);
+        employees.setUchastka(uchastka);
         employees.setPhotoNarushenie(photoNarushenie);
         employeesRepository.save(employees);
 

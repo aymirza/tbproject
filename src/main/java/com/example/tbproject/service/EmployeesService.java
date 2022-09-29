@@ -9,7 +9,7 @@ import java.util.List;
 
 @Component
 public interface EmployeesService {
-    Employees createEmpl(String name, MultipartFile file) throws IOException;
+    Employees createEmpl(String name,String uchastka, MultipartFile file) throws IOException;
 
     Employees updateEmpl(Employees employees);
 

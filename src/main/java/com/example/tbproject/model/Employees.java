@@ -23,12 +23,14 @@ public class Employees {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer empid;
     private String name;
+    private String uchastka;
     @OneToOne
     @JoinColumn(name = "photo_id")
     private PhotoNarushenie photoNarushenie;
 
     public Employees(EmployeesDTO employeesDTO){
         this.name = employeesDTO.getName();
+        this.uchastka = employeesDTO.getUchastka();
         this.photoNarushenie = employeesDTO.getPhotoNarushenie();
 
     }

@@ -10,5 +10,6 @@ public class EmployeesDTO {
     private String name;
     private PhotoNarushenie photoNarushenie;
     private String cdate;
+    private String uchastka;
 
 }
