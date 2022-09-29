@@ -8,7 +8,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 
 @CrossOrigin(origins = "http://localhost:3000")
@@ -22,8 +24,11 @@ public class EmployeeController {
     private UchastkaService uchastkaService;
 
    @PostMapping(path = "/")
-    public ResponseEntity<Employees> createEmpl(@RequestBody Employees employees){
-       return new ResponseEntity<>(employeesService.createEmpl(employees), HttpStatus.CREATED);
+    public ResponseEntity<?> createEmpl(@RequestParam("name") String name,
+                                                @RequestParam("photo") MultipartFile file) throws IOException {
+       Employees employees = employeesService.createEmpl(name,file);
+       return ResponseEntity.status(HttpStatus.OK)
+               .body(employees);
    }
    @GetMapping(path = "/{empid}")
     public ResponseEntity<Employees> getEmpl(@PathVariable(value = "empid")Integer empid){

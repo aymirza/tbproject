@@ -43,8 +43,6 @@ public class ImageUploadServiceImpl {
         uchastka1.setName(uchastka);
         uchastka1 = uchastkaRepository.save(uchastka1);
 
-
-
         byte[] imageData = ImageUtils.compressImage(file.getBytes());
         ImageUpload imageUpload1 = new ImageUpload();
         imageUpload1.setFilename(filename);
